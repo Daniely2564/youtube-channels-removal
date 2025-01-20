@@ -1,0 +1,17 @@
+{
+  "name": "Chrome Blocklist Extension",
+  "description": "Extension to remove all the videos and channels from the youtube from home, search, and detailed page.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "dist/index.html",
+    "default_icon": "youtube-banned-image.png"
+  },
+  "permissions": ["storage", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["dist/scripts/remove-script.js"]
+    }
+  ]
+}

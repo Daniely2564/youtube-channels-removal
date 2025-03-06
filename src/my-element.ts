@@ -58,13 +58,16 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <div class="card">
-        ${this.message.length > 0 ?
-        html`<div class="message">Message: <span>${this.message}</span></div>` : null}
+        ${this.message.length > 0
+          ? html`<div class="message">
+              Message: <span>${this.message}</span>
+            </div>`
+          : null}
         <div class="flex flex-col">
           ${this.listToRemove.map(
-          (item, idx) =>
-            html`<p class="item" @click=${this.onRemoveItem(idx)}>${item}</p>`
-        )}
+            (item, idx) =>
+              html`<p class="item" @click=${this.onRemoveItem(idx)}>${item}</p>`
+          )}
         </div>
         <input
           .value=${this.userInput}
@@ -144,15 +147,15 @@ export class MyElement extends LitElement {
     }
     .message {
       font-size: 0.888rem;
-      font-weight: 500; 
+      font-weight: 500;
     }
     .message span {
       font-weight: 400;
     }
-    .message.error span{
+    .message.error span {
       color: red;
     }
-    .message.success span{
+    .message.success span {
       color: green;
     }
   `;
